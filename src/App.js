@@ -1,8 +1,18 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
 
 class App extends Component {
+  constructor(){
+    super();
+    this.getStuff();
+  }
+  getStuff = () => {
+    axios.get('http://localhost:8080/').then(res => {
+      console.log('this is userprefs?', res)
+    })
+  }
   render() {
     return (
       <div className="App">
